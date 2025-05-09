@@ -1,11 +1,11 @@
 import "./App.css";
+import HomePage from "./HomePage/HomePage.jsx";
+import Psychologists from "./Psychologists/Psychologists.jsx";
 
-function App() {
+export default function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <HomePage />
     </>
   );
 }
-
-export default App;
