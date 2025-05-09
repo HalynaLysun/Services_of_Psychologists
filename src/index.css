@@ -1,4 +1,15 @@
-:root {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+body {
+  color: #191a15;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  color: #191a15;
+  text-decoration: none;
+}
+
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +76,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

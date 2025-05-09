@@ -1,22 +1,20 @@
+import css from "./HomePage.module.css";
 import Feavorite from "../Feavorite/Feavorite.jsx";
 import Psychologists from "../Psychologists/Psychologists.jsx";
 
 export default function HomePage() {
   return (
-    <>
-      <div>
-        {/* <div class="logo">
-          <strong style="color: #306eff">psychologists</strong>.services
-        </div> */}
+    <div className={css.container}>
+      <div className={css.nav}>
         <nav>
           <a href={<HomePage />}>
-            <span>psychologists.</span>
-            <span>services</span>
+            <span className={css.logo}>psychologists.</span>
+            <span className={css.logos}>services</span>
           </a>
         </nav>
 
         <nav>
-          <ul>
+          <ul className={css.pages}>
             <li>
               <a href="/homePage">Home</a>
             </li>
@@ -24,18 +22,24 @@ export default function HomePage() {
               <a href="/psychologists">Psychologists</a>
             </li>
             <li>
-              <a href="/feavorite">Feavorite</a>
+              <a className={css.feavorite} href="/feavorite">
+                Feavorite
+              </a>
             </li>
           </ul>
         </nav>
 
         <nav>
-          <ul>
+          <ul className={css.auth}>
             <li>
-              <a href="#">Log in</a>
+              <a className={css.login} href="/logIn">
+                Log in
+              </a>
             </li>
             <li>
-              <a href="#">Registration</a>
+              <a className={css.reg} href="/registration">
+                Registration
+              </a>
             </li>
           </ul>
         </nav>
@@ -45,6 +49,6 @@ export default function HomePage() {
         We help you to reveal your potential, overcome challenges and find a
         guide in your own life with the help of our experienced psychologists.
       </p>
-    </>
+    </div>
   );
 }
