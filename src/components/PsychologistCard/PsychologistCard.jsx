@@ -1,5 +1,5 @@
 export default function PsychologistCard({
-  psychologists: {
+  psychologist: {
     name,
     avatar_url,
     experience,
@@ -15,9 +15,8 @@ export default function PsychologistCard({
   console.log(name);
   return (
     <>
-      <p>Hello</p>
-      {/* <img src={psychologists.avatar_url} alt="" /> */}
-      {/* <h1>Name: {psychologists.name}</h1> */}
+      <img src={avatar_url} alt="" />
+      <h1>Name: {name}</h1>
     </>
   );
 }

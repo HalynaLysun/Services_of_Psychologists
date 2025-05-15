@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
 body {
   color: #191a15;
   font-family: "Inter", sans-serif;
@@ -7,6 +8,30 @@ body {
 a {
   color: #191a15;
   text-decoration: none;
+  cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* :root {

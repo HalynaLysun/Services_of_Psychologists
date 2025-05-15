@@ -4,7 +4,8 @@ import Psychologists from "../Psychologists/Psychologists.jsx";
 import AuthNav from "../AuthNav/AuthNav.jsx";
 import PsychologistList from "../PsychologistList/PsychologistList.jsx";
 
-export default function HomePage(psychologists) {
+export default function HomePage({ psychologists }) {
+  console.log(psychologists);
   return (
     <>
       <PsychologistList psychologists={psychologists} />
