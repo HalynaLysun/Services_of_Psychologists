@@ -21,6 +21,10 @@ export default function PsychologistCard({
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
+  const handleClick = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div className={css.card}>
       <div className={css.header}>
@@ -31,30 +35,38 @@ export default function PsychologistCard({
 
         <div className={css.topInfo}>
           <p className={css.role}>Psychologist</p>
-          <h2 className={css.name}>{name}</h2>
+          <h1 className={css.name}>{name}</h1>
 
           <div className={css.tags}>
-            <span className={css.tag}>
-              Experience: <strong>{experience}</strong>
-            </span>
-            <span className={css.tag}>
-              License: <strong>{license}</strong>
-            </span>
-          </div>
-          <div className={css.tags}>
-            <span className={css.tag}>
-              Specialization: <strong>{specialization}</strong>
-            </span>
-            <span className={css.tag}>
-              Initial_consultation: <strong>{initial_consultation}</strong>
-            </span>
+            <ul className={css.info}>
+              <li className={css.item}>
+                <p className={css.tag}>
+                  License: <strong>{license}</strong>
+                </p>
+              </li>
+              <li className={css.item}>
+                <p className={css.tag}>
+                  Experience: <strong>{experience}</strong>
+                </p>
+              </li>
+              <li className={css.item}>
+                <p className={css.tag}>
+                  Specialization: <strong>{specialization}</strong>
+                </p>
+              </li>
+              <li className={css.item}>
+                <p className={css.tag}>
+                  Initial_consultation: <strong>{initial_consultation}</strong>
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
 
         <div className={css.ratingBlock}>
           <FaStar color="gold" /> Rating: <strong>{rating}</strong> | Price / 1
           hour: <span className={css.price}>{price_per_hour}$</span>
-          <button className={css.heart}>
+          <button className={css.heart} onClick={handleClick}>
             {isFavorite ? <AiFillHeart color="black" /> : <AiOutlineHeart />}
           </button>
         </div>

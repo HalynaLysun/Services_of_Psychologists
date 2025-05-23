@@ -8,7 +8,7 @@ import { initializeApp } from "firebase/app";
 export default function App() {
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBFc1R1dG3S0XdE2mUB4M08j00ywzEkAQc",
+    // apiKey: "AIzaSyBFc1R1dG3S0XdE2mUB4M08j00ywzEkAQc",
     authDomain: "services-of-psychologists.firebaseapp.com",
     projectId: "services-of-psychologists",
     storageBucket: "services-of-psychologists.firebasestorage.app",

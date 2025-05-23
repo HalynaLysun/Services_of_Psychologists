@@ -57,11 +57,12 @@
   font-size: 20px;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 4px;
+.item {
+  margin-bottom: 8px;
+}
+
+.info:last-child {
+  margin-bottom: 12px;
 }
 
 .tag {
