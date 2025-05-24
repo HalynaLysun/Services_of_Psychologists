@@ -6,7 +6,6 @@ import PsychologistList from "../PsychologistList/PsychologistList.jsx";
 import AppointmentForm from "../AppointmentForm/AppointmentForm.jsx";
 
 export default function HomePage({ psychologists }) {
-  console.log(psychologists);
   return (
     <>
       <PsychologistList psychologists={psychologists} />

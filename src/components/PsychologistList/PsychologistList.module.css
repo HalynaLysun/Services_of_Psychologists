@@ -1,0 +1,12 @@
+.loader {
+  margin: 0 auto;
+  display: block;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #fbfbfb;
+  background-color: #3470ff;
+  min-width: 176px;
+  min-height: 48px;
+}

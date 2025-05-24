@@ -4,6 +4,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 
 import { useState } from "react";
+import PsychologistReviews from "../PsychologistReviews/PsychologistReviews.jsx";
 
 export default function PsychologistCard({
   psychologist: {
@@ -20,6 +21,7 @@ export default function PsychologistCard({
   },
 }) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [showReviews, setShowReviews] = useState(false);
 
   const handleClick = () => {
     setIsFavorite(!isFavorite);
@@ -73,9 +75,14 @@ export default function PsychologistCard({
       </div>
 
       <p className={css.about}>{about}</p>
-      <a href="#" className={css.readMore}>
-        Read more
-      </a>
+      <button
+        className={css.readMore}
+        onClick={() => setShowReviews((prev) => !prev)}
+      >
+        {showReviews ? "Hide" : "Read more"}
+      </button>
+
+      {showReviews && <PsychologistReviews reviews={reviews} />}
     </div>
   );
 }
