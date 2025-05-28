@@ -5,10 +5,10 @@ import AuthNav from "../AuthNav/AuthNav.jsx";
 import PsychologistList from "../PsychologistList/PsychologistList.jsx";
 import AppointmentForm from "../AppointmentForm/AppointmentForm.jsx";
 
-export default function HomePage({ psychologists }) {
+export default function HomePage() {
   return (
     <>
-      <PsychologistList psychologists={psychologists} />
+      <PsychologistList />
       <AppointmentForm />
 
       <div className={css.container}>
