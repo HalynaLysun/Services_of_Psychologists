@@ -3,13 +3,11 @@ import Feavorite from "../Feavorite/Feavorite.jsx";
 import Psychologists from "../Psychologists/Psychologists.jsx";
 import AuthNav from "../AuthNav/AuthNav.jsx";
 import PsychologistList from "../PsychologistList/PsychologistList.jsx";
-import AppointmentForm from "../AppointmentForm/AppointmentForm.jsx";
 
 export default function HomePage() {
   return (
     <>
       <PsychologistList />
-      <AppointmentForm />
 
       <div className={css.container}>
         <div className={css.nav}>

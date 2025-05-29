@@ -3,9 +3,8 @@ import { db } from "./db_psychologists.js";
 
 export const getPsychologists = async () => {
   try {
-    const psychologistsRef = ref(db, "services-of-psychologists");
+    const psychologistsRef = ref(db, "/");
     const snapshot = await get(psychologistsRef);
-    console.log("SNAPSHOT:", snapshot.exists(), snapshot.val());
 
     if (snapshot.exists()) {
       const data = snapshot.val();

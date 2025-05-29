@@ -18,7 +18,6 @@ export default function PsychologistList() {
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 3);
   };
-  console.log(psychologists);
 
   return (
     <div>
