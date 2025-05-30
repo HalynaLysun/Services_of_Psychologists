@@ -2,11 +2,12 @@ import css from "./PsychologistCard.module.css";
 import { FaStar } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
-
 import { useState } from "react";
 import PsychologistReviews from "../PsychologistReviews/PsychologistReviews.jsx";
 
 export default function PsychologistCard({
+  onToggleFavorite,
+  isCardFavorite,
   psychologist: {
     name,
     avatar_url,
@@ -69,7 +70,7 @@ export default function PsychologistCard({
           <FaStar color="gold" /> Rating: <strong>{rating}</strong> | Price / 1
           hour: <span className={css.price}>{price_per_hour}$</span>
           <button className={css.heart} onClick={handleClick}>
-            {isFavorite ? <AiFillHeart color="black" /> : <AiOutlineHeart />}
+            {isFavorite ? <AiFillHeart color="#3470FF" /> : <AiOutlineHeart />}
           </button>
         </div>
       </div>

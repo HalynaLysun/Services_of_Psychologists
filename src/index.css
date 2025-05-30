@@ -3,6 +3,9 @@
 body {
   color: #191a15;
   font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 24px 128px;
+  max-width: 1200px;
 }
 
 a {
