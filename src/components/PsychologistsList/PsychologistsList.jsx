@@ -6,15 +6,6 @@ import { getPsychologists } from "../../getPsychologists.js";
 export default function PsychologistsList() {
   const [visibleCount, setVisibleCount] = useState(3);
   const [psychologists, setPsychologists] = useState([]);
-  const [favorites, setFavorites] = useState([]);
-
-  // Записувати фаворитів у локал сторедж і читати по id
-
-  const toggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id]
-    );
-  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,11 +24,7 @@ export default function PsychologistsList() {
       <ul>
         {psychologists.slice(0, visibleCount).map((psychologist) => (
           <li key={psychologist.id}>
-            <PsychologistCard
-              psychologist={psychologist}
-              onToggleFavorite={toggleFavorite}
-              isCardFavorite={favorites.includes(psychologist.id)}
-            />
+            <PsychologistCard psychologist={psychologist} />
           </li>
         ))}
       </ul>

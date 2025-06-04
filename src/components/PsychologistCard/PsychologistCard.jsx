@@ -2,12 +2,10 @@ import css from "./PsychologistCard.module.css";
 import { FaStar } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PsychologistReviews from "../PsychologistReviews/PsychologistReviews.jsx";
 
 export default function PsychologistCard({
-  onToggleFavorite,
-  isCardFavorite,
   psychologist: {
     name,
     avatar_url,
@@ -24,7 +22,23 @@ export default function PsychologistCard({
   const [isFavorite, setIsFavorite] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
 
+  const [favorite, setFavorite] = useState(() => {
+    const storedFavorites = localStorage.getItem("favorite");
+    return storedFavorites !== null ? JSON.parse(storedFavorites) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("favorite", JSON.stringify(favorite));
+  }, [favorite]);
+
   const handleClick = () => {
+    setFavorite((favorite) => {
+      if (favorite.includes(name)) {
+        return favorite.filter((n) => n !== name);
+      } else {
+        return [...favorite, name];
+      }
+    });
     setIsFavorite(!isFavorite);
   };
 
