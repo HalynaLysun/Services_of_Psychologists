@@ -1,12 +1,13 @@
+//
+
 import css from "./PsychologistCard.module.css";
 import { FaStar } from "react-icons/fa";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import PsychologistReviews from "../PsychologistReviews/PsychologistReviews.jsx";
 
-export default function PsychologistCard({
-  psychologist: {
+export default function PsychologistCard({ psychologist }) {
+  const {
     name,
     avatar_url,
     experience,
@@ -17,29 +18,32 @@ export default function PsychologistCard({
     specialization,
     initial_consultation,
     about,
-  },
-}) {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const [showReviews, setShowReviews] = useState(false);
+  } = psychologist;
 
-  const [favorite, setFavorite] = useState(() => {
-    const storedFavorites = localStorage.getItem("favorite");
-    return storedFavorites !== null ? JSON.parse(storedFavorites) : [];
+  const [isFavorite, setIsFavorite] = useState(() => {
+    const stored = JSON.parse(localStorage.getItem("favorites")) || [];
+    return stored.some((p) => p.name === name);
   });
 
+  const [showReviews, setShowReviews] = useState(false);
+
   useEffect(() => {
-    localStorage.setItem("favorite", JSON.stringify(favorite));
-  }, [favorite]);
+    const stored = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    let updated;
+
+    if (isFavorite) {
+      const alreadyExists = stored.some((p) => p.name === name);
+      updated = alreadyExists ? stored : [...stored, psychologist];
+    } else {
+      updated = stored.filter((p) => p.name !== name);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(updated));
+  }, [isFavorite, name, psychologist]);
 
   const handleClick = () => {
-    setFavorite((favorite) => {
-      if (favorite.includes(name)) {
-        return favorite.filter((n) => n !== name);
-      } else {
-        return [...favorite, name];
-      }
-    });
-    setIsFavorite(!isFavorite);
+    setIsFavorite((prev) => !prev);
   };
 
   return (
