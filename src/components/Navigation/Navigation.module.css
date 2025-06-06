@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  position: relative;
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 90px;
 }
 
 .nav ::after {
@@ -15,12 +15,17 @@
   left: 0;
   width: 100vw;
   height: 1px;
-  margin-left: calc(-50vw + 50%);
-  background-color: #191a1533;
+  pointer-events: none;
+  background-color: #e3e2e233;
+  box-shadow: 0.5px 0.5px 0.5px rgba(223, 222, 222, 0.1);
+  margin-left: calc(-128px);
 }
 
-/* Лого є сенс зробити окремим компонентом */
 .logo {
+  margin-right: 130px;
+}
+
+.logoLeft {
   color: #3470ff;
   font-size: 20px;
   font-weight: bold;
@@ -28,7 +33,7 @@
   letter-spacing: -0.02em;
 }
 
-.logos {
+.logoRight {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: -0.02em;

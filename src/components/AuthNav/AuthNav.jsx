@@ -1,17 +1,25 @@
 import { NavLink } from "react-router-dom";
 import css from "./AuthNav.module.css";
+import { useState } from "react";
+import LoginModal from "../LoginModal/LoginModal.jsx";
+import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 
 export default function AuthNav() {
+  const [modal, setModal] = useState(null);
+
   return (
-    <div>
+    <>
       <nav className={css.auth}>
-        <NavLink className={css.login} to="/register">
-          Registration
-        </NavLink>
-        <NavLink className={css.reg} to="/login">
+        <button className={css.login} onClick={() => setModal("login")}>
           Log In
-        </NavLink>
+        </button>
+        <button className={css.reg} onClick={() => setModal("register")}>
+          Registration
+        </button>
       </nav>
-    </div>
+
+      {modal === "login" && <LoginModal onClose={() => setModal(null)} />}
+      {modal === "register" && <RegisterModal onClose={() => setModal(null)} />}
+    </>
   );
 }

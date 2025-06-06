@@ -9,7 +9,6 @@ export default function Favorites() {
   }, []);
   return (
     <div>
-      <h2>Favorite Psychologists</h2>
       {favorites.length === 0 ? (
         <p>No favorites yet.</p>
       ) : (

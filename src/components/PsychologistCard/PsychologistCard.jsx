@@ -1,5 +1,3 @@
-//
-
 import css from "./PsychologistCard.module.css";
 import { FaStar } from "react-icons/fa";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";

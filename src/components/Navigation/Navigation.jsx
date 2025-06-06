@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 export default function Navigation() {
   return (
     <div className={css.nav}>
-      <nav>
+      <nav className={css.logo}>
         <NavLink to="/">
-          <span className={css.logo}>psychologists.</span>
-          <span className={css.logos}>services</span>
+          <span className={css.logoLeft}>psychologists.</span>
+          <span className={css.logoRight}>services</span>
         </NavLink>
       </nav>
 
@@ -29,7 +29,6 @@ export default function Navigation() {
       </nav>
 
       <AuthNav />
-      <hr />
     </div>
   );
 }

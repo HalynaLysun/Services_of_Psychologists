@@ -1,15 +1,8 @@
-import { useState } from "react";
 import css from "./PsychologistReviews.module.css";
 import { FaStar } from "react-icons/fa";
-import AppointmentForm from "../AppointmentForm/AppointmentForm.jsx";
+import { NavLink } from "react-router-dom";
 
 export default function PsychologistReviews({ reviews }) {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleClick = () => {
-    setShowModal(!showModal);
-  };
-
   return (
     <div>
       <ul>
@@ -28,8 +21,8 @@ export default function PsychologistReviews({ reviews }) {
           </li>
         ))}
       </ul>
-      {<button onClick={handleClick}>Make an appointment</button>}
-      {showModal && <AppointmentForm />}
+      <NavLink to="/appointment">Make an appointment</NavLink>
+
     </div>
   );
 }
