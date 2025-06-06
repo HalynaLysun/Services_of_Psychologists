@@ -2,7 +2,10 @@ import css from "./PsychologistReviews.module.css";
 import { FaStar } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-export default function PsychologistReviews({ reviews }) {
+export default function PsychologistReviews({ psychologist }) {
+  const { reviews } = psychologist;
+
+  console.log(psychologist);
   return (
     <div>
       <ul>
@@ -21,8 +24,10 @@ export default function PsychologistReviews({ reviews }) {
           </li>
         ))}
       </ul>
-      <NavLink to="/appointment">Make an appointment</NavLink>
 
+      <NavLink to="/appointment" state={{ psychologist }}>
+        Make an appointment
+      </NavLink>
     </div>
   );
 }

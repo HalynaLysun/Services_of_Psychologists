@@ -2,6 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FiClock } from "react-icons/fi";
 import css from "./AppointmentForm.module.css";
+import { AiOutlineClose } from "react-icons/ai";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function AppointmentForm() {
   const initialValues = {
@@ -10,6 +12,22 @@ export default function AppointmentForm() {
     time: "",
     email: "",
     comment: "",
+  };
+
+  const navigate = useNavigate();
+  const { state } = useLocation();
+
+  const psychologist = state?.psychologist;
+  console.log(psychologist);
+
+  const { name, avatar_url } = psychologist;
+
+  const handleClose = () => {
+    navigate(-1);
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) handleClose();
   };
 
   const validationSchema = Yup.object({
@@ -24,7 +42,11 @@ export default function AppointmentForm() {
     console.log("Form data:", values);
   };
   return (
-    <div className={css.card}>
+    <div className={css.card} onClick={handleBackdropClick}>
+      <button onClick={handleClose}>
+        <AiOutlineClose />
+      </button>
+
       <h2 className={css.title}>
         Make an appointment
         <br />
@@ -35,19 +57,13 @@ export default function AppointmentForm() {
         short form below to book your personal appointment with a professional
         psychologist.
       </p>
-
       <div className={css.doctorInfo}>
-        <img
-          src="https://i.pravatar.cc/48"
-          alt="Doctor"
-          className={css.avatar}
-        />
+        <img src={avatar_url} alt="Doctor" className={css.avatar} />
         <div>
           <div className={css.label}>Your psychologist</div>
-          <div className={css.name}>Dr. Sarah Davis</div>
+          <div className={css.name}>{name}</div>
         </div>
       </div>
-
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}

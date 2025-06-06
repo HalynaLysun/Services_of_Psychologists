@@ -9,7 +9,6 @@ export default function PsychologistCard({ psychologist }) {
     name,
     avatar_url,
     experience,
-    reviews,
     price_per_hour,
     rating,
     license,
@@ -99,7 +98,7 @@ export default function PsychologistCard({ psychologist }) {
         {showReviews ? "Hide" : "Read more"}
       </button>
 
-      {showReviews && <PsychologistReviews reviews={reviews} />}
+      {showReviews && <PsychologistReviews psychologist={psychologist} />}
     </div>
   );
 }
