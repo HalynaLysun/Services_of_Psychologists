@@ -4,6 +4,7 @@ import { FiClock } from "react-icons/fi";
 import css from "./AppointmentForm.module.css";
 import { AiOutlineClose } from "react-icons/ai";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function AppointmentForm() {
   const initialValues = {
@@ -14,11 +15,13 @@ export default function AppointmentForm() {
     comment: "",
   };
 
+  const [showTimeOptions, setShowTimeOptions] = useState(false);
+  const times = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+
   const navigate = useNavigate();
   const { state } = useLocation();
 
   const psychologist = state?.psychologist;
-  console.log(psychologist);
 
   const { name, avatar_url } = psychologist;
 
@@ -43,7 +46,7 @@ export default function AppointmentForm() {
   };
   return (
     <div className={css.card} onClick={handleBackdropClick}>
-      <button onClick={handleClose}>
+      <button className={css.closeBtn} onClick={handleClose}>
         <AiOutlineClose />
       </button>
 
@@ -96,8 +99,36 @@ export default function AppointmentForm() {
             </div>
 
             <div className={`${css.fieldGroup} ${css.timeWrapper}`}>
-              <Field name="time" type="time" className={css.input} />
-              <FiClock className={css.icon} />
+              <Field name="time">
+                {({ field, form }) => (
+                  <div className={css.customTimeWrapper}>
+                    <div
+                      className={css.customTimeInput}
+                      onClick={() => setShowTimeOptions((prev) => !prev)}
+                    >
+                      {field.value || "00:00"}
+                      <FiClock className={css.icon} />
+                    </div>
+
+                    {showTimeOptions && (
+                      <ul className={css.dropdown}>
+                        {times.map((time) => (
+                          <li
+                            key={time}
+                            onClick={() => {
+                              form.setFieldValue("time", time);
+                              setShowTimeOptions(false);
+                            }}
+                          >
+                            {time}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
+              </Field>
+
               <ErrorMessage name="time" component="div" className={css.error} />
             </div>
           </div>

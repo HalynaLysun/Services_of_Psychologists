@@ -1,4 +1,5 @@
 import css from "./HomePage.module.css";
+import picturePsychologoist from "../../img/Psychologist.jpg";
 
 export default function HomePage() {
   return (
@@ -14,7 +15,7 @@ export default function HomePage() {
             psychologists.
           </p>
         </div>
-        <img src="" alt="" />
+        <img src={picturePsychologoist} alt="Psychologist" />
       </div>
     </>
   );
