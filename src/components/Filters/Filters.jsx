@@ -11,9 +11,15 @@ export default function Filters({ psychologists, onFilterChange }) {
       case "Z-A":
         return sorted.sort((a, b) => b.name.localeCompare(a.name));
       case "PriceLowHigh":
-        return sorted.sort((a, b) => a.price - b.price);
+        return sorted.sort((a, b) => a.price_per_hour - b.price_per_hour);
       case "PriceHighLow":
-        return sorted.sort((a, b) => b.price - a.price);
+        return sorted.sort((a, b) => b.price_per_hour - a.price_per_hour);
+      case "Popular":
+        return sorted.sort((a, b) => b.rating - a.rating);
+      case "NotPopular":
+        return sorted.sort((a, b) => a.rating - b.rating);
+      case "ShowAll":
+        return sorted;
       default:
         return data;
     }
@@ -35,6 +41,9 @@ export default function Filters({ psychologists, onFilterChange }) {
         <option value="Z-A">Z to A</option>
         <option value="PriceLowHigh">Lower price first</option>
         <option value="PriceHighLow">Highest price first</option>
+        <option value="Popular">Popular</option>
+        <option value="NotPopular">NotPopular</option>
+        <option value="ShowAll">ShowAll</option>
       </select>
     </div>
   );
