@@ -1,5 +1,6 @@
 import css from "./HomePage.module.css";
 import picturePsychologoist from "../../img/Psychologist.jpg";
+import { NavLink } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,9 @@ export default function HomePage() {
             guide in your own life with the help of our experienced
             psychologists.
           </p>
+          <NavLink className={css.button} to="/psychologists">
+            Get started
+          </NavLink>
         </div>
         <img src={picturePsychologoist} alt="Psychologist" />
       </div>

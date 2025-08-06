@@ -26,3 +26,15 @@
   color: #fbfbfb;
   background-color: #3470ff;
 }
+
+.text {
+  margin-bottom: 24px;
+}
+
+.button {
+  padding: 14px 39px;
+  border: 1px solid #3470ff;
+  border-radius: 30px;
+  color: #fbfbfb;
+  background-color: #3470ff;
+}
