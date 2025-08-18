@@ -10,12 +10,20 @@ export default function RegisterModal({ onClose }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(null);
 
   const handleRegister = async () => {
+    setError(null);
+    setSuccess(null);
+
     if (password !== confirmPassword) {
-      alert("Пароли не совпадают");
+      setError("Пароли не совпадают");
       return;
     }
+
+    setIsLoading(true);
 
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -26,13 +34,24 @@ export default function RegisterModal({ onClose }) {
       const user = userCredential.user;
 
       await sendEmailVerification(user);
-      alert(
+
+      setSuccess(
         "Registration successful! Please check your email to verify your account."
       );
-      onClose();
+      handleClose();
     } catch (error) {
-      alert("Ошибка регистрации: " + error.message);
+      setError("Ошибка регистрации: " + error.message);
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const handleClose = () => {
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    setError(null);
+    onClose();
   };
 
   return (
@@ -46,20 +65,27 @@ export default function RegisterModal({ onClose }) {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          disabled={isLoading}
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          disabled={isLoading}
         />
         <input
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
+          disabled={isLoading}
         />
-        <button onClick={handleRegister}>Sign Up</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {success && <p style={{ color: "green" }}>{success}</p>}
+        <button onClick={handleRegister} disabled={isLoading}>
+          {isLoading ? "Регистрация..." : "Sign Up"}
+        </button>
       </div>
     </div>
   );
