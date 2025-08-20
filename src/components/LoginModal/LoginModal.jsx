@@ -2,6 +2,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../db_psychologists.js";
 import css from "./LoginModal.module.css";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function LoginModal({ onClose }) {
   const [email, setEmail] = useState("");
@@ -20,8 +21,12 @@ export default function LoginModal({ onClose }) {
   return (
     <div className={css.modalOverlay}>
       <div className={css.modalContent}>
-        <button onClick={onClose} className={css.closeButton}>
-          ×
+        <button
+          aria-label="Close modal"
+          onClick={onClose}
+          className={css.closeButton}
+        >
+          <AiOutlineClose />
         </button>
         <h2>Log In</h2>
         <p>Welcome back! Please enter your credentials...</p>

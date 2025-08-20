@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Favorites from "./Favorites/Favorites.jsx";
 import Navigation from "./Navigation/Navigation.jsx";
 import AppointmentForm from "./AppointmentForm/AppointmentForm.jsx";
+import LoginModal from "./LoginModal/LoginModal.jsx";
 
 export default function App() {
   return (

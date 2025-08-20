@@ -46,7 +46,11 @@ export default function AppointmentForm() {
   };
   return (
     <div className={css.card} onClick={handleBackdropClick}>
-      <button className={css.closeBtn} onClick={handleClose}>
+      <button
+        className={css.closeBtn}
+        aria-label="Close modal"
+        onClick={handleClose}
+      >
         <AiOutlineClose />
       </button>
 

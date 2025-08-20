@@ -15,13 +15,26 @@ export default function Navigation() {
       <nav>
         <ul className={css.pages}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/psychologists">Psychologists</NavLink>
+            <NavLink
+              to="/psychologists"
+              aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+            >
+              Psychologists
+            </NavLink>
           </li>
           <li>
-            <NavLink className={css.feavorite} to="/favorites">
+            <NavLink
+              to="/favorites"
+              aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+            >
               Favorites
             </NavLink>
           </li>

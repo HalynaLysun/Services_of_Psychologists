@@ -5,6 +5,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../db_psychologists.js";
 import css from "./RegisterModal.module.css";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function RegisterModal({ onClose }) {
   const [email, setEmail] = useState("");
@@ -57,7 +58,9 @@ export default function RegisterModal({ onClose }) {
   return (
     <div>
       <div>
-        <button onClick={onClose}>×</button>
+        <button aria-label="Close modal" onClick={onClose}>
+          <AiOutlineClose />
+        </button>
         <h2>Registration</h2>
         <p>Please fill the form to register...</p>
         <input
