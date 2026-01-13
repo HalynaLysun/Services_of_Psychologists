@@ -8,15 +8,17 @@ export const getPsychologists = async () => {
 
     if (snapshot.exists()) {
       const data = snapshot.val();
-      return Object.entries(data).map(([id, value]) => ({
-        id,
-        ...value,
-      }));
+      return Object.entries(data)
+        .map(([id, value]) => ({
+          id,
+          ...value,
+        }))
+        .filter((item) => item.name);
     } else {
       return [];
     }
   } catch (error) {
-    console.error("Ошибка при загрузке психологов:", error);
+    console.error("Error in downloading of psychologists:", error);
     return [];
   }
 };
