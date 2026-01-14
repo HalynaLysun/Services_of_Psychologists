@@ -1,12 +1,6 @@
-# React + Vite
+## 🚀 Future Improvements
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Enhanced Calendar Experience**: I plan to replace the standard HTML date input with a custom library like `react-datepicker`. This will allow "disabling" (graying out) fully booked dates directly in the calendar, preventing users from selecting days with no available slots.
+- **Advanced UI/UX**: Further polishing of the booking flow, including smoother transitions and real-time availability indicators.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+_Note: These improvements are planned for future releases, especially if the project is transitioned into professional or commercial use._
