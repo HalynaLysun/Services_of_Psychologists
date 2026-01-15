@@ -2,15 +2,16 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
+const env = import.meta.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBFc1R1dG3S0XdE2mUB4M08j00ywzEkAQc",
-  authDomain: "services-of-psychologists.firebaseapp.com",
-  databaseURL:
-    "https://services-of-psychologists-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "services-of-psychologists",
-  storageBucket: "services-of-psychologists.firebasestorage.app",
-  messagingSenderId: "123447217505",
-  appId: "1:123447217505:web:9fdbe2f90844483af80920",
+  apiKey: env.VITE_FIREBASE_API_KEY,
+  authDomain: env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: env.VITE_FIREBASE_DATABASE_URL,
+  projectId: env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
