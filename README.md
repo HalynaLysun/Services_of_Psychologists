@@ -1,3 +1,12 @@
+ПОКРАЩЕННЯ
+
+Зробити фільтр через useSearchParams та useMemo
+Додати до форми запису чекбокс про згоду про використання персональних даних
+Зробити гарний css та адаптивну верстку
+Зробити логін і реєстрацію
+
+Можливо зробити кнопку повернутись назад через useLocation
+
 ## 🚀 Future Improvements
 
 - **Enhanced Calendar Experience**: I plan to replace the standard HTML date input with a custom library like `react-datepicker`. This will allow "disabling" (graying out) fully booked dates directly in the calendar, preventing users from selecting days with no available slots.

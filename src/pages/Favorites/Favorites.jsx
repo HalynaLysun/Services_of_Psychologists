@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import PsychologistCard from "../PsychologistCard/PsychologistCard.jsx";
-import Filters from "../Filters/Filters.jsx";
+import PsychologistCard from "../../components/PsychologistCard/PsychologistCard.jsx";
+import Filters from "../../components/Filters/Filters.jsx";
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState([]);

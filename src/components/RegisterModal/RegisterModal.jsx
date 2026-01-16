@@ -3,7 +3,7 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
 } from "firebase/auth";
-import { auth } from "../../db_psychologists.js";
+import { auth } from "../../firebase-api/db_psychologists.js";
 import css from "./RegisterModal.module.css";
 import { AiOutlineClose } from "react-icons/ai";
 

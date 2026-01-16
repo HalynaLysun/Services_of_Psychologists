@@ -1,12 +1,11 @@
 import { AiOutlineClose } from "react-icons/ai";
-import css from "./AppointmentForm.module.css"
+import css from "./AppointmentForm.module.css";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { handleSubmit } from "../../push_appointment.js";
+import { handleSubmit } from "../../firebase-api/push_appointment.js";
 import AppointmentFormInner from "../AppointmentFormInner/AppointmentFormInner.jsx";
-
 
 export default function AppointmentForm() {
   const [showTimeOptions, setShowTimeOptions] = useState(false);

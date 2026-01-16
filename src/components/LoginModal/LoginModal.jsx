@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../db_psychologists.js";
+import { auth } from "../../firebase-api/db_psychologists.js";
 import css from "./LoginModal.module.css";
 import { AiOutlineClose } from "react-icons/ai";
 

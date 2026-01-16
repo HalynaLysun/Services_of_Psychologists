@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 export default function PsychologistReviews({ psychologist }) {
   const { reviews } = psychologist;
 
-  console.log(psychologist);
   return (
     <div>
       <ul>

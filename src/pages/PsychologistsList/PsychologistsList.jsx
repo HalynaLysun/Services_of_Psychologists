@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import PsychologistCard from "../PsychologistCard/PsychologistCard.jsx";
+import PsychologistCard from "../../components/PsychologistCard/PsychologistCard.jsx";
 import css from "./PsychologistsList.module.css";
-import { getPsychologists } from "../../getPsychologists.js";
-import Filters from "../Filters/Filters.jsx";
+import { getPsychologists } from "../../firebase-api/getPsychologists.js";
+import Filters from "../../components/Filters/Filters.jsx";
 
 export default function PsychologistsList() {
   const [visibleCount, setVisibleCount] = useState(3);

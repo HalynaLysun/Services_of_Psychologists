@@ -76,8 +76,6 @@ export const handleSubmit = async (values) => {
       createdAt: new Date().toISOString(),
     };
 
-    console.log(newAppointment);
-
     await push(appointmentsRef, newAppointment);
 
     await sendTelegramNotification(newAppointment);

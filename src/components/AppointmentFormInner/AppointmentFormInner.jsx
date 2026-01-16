@@ -5,7 +5,7 @@ import css from "./AppointmentFormInner.module.css";
 
 import { useEffect } from "react";
 
-import { fetchOccupiedHours } from "../../chek_date_of_appointment.js";
+import { fetchOccupiedHours } from "../../firebase-api/chek_date_of_appointment.js";
 
 export default function AppointmentFormInner({
   times,
