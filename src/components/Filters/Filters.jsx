@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 export default function Filters({ psychologists, onFilterChange }) {
-  const [sortOption, setSortOption] = useState("A-Z");
+  const [searchParams, setSearchParams] = useSearchParams();
+  // const [sortOption, setSortOption] = useState("A-Z");
+
+  const sortOption = searchParams.get("sort") ?? "A-Z";
 
   const sortPsychologists = (option, data) => {
     const sorted = [...data];
@@ -28,14 +32,18 @@ export default function Filters({ psychologists, onFilterChange }) {
   useEffect(() => {
     const sorted = sortPsychologists(sortOption, psychologists);
     onFilterChange(sorted);
-  }, [sortOption, psychologists]);
+  }, [sortOption, psychologists, onFilterChange]);
 
   return (
     <div>
       <h1>Filters</h1>
       <select
         value={sortOption}
-        onChange={(e) => setSortOption(e.target.value)}
+        onChange={(e) => {
+          const nextParams = new URLSearchParams(searchParams);
+          nextParams.set("sort", e.target.value);
+          setSearchParams(nextParams);
+        }}
       >
         <option value="A-Z">A to Z</option>
         <option value="Z-A">Z to A</option>
