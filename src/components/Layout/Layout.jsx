@@ -15,7 +15,7 @@ export default function Layout({ children }) {
         </Suspense>
       </main>
 
-      <footer className={css.footer}>© 2026 Психологічна допомога</footer>
+      <footer className={css.footer}>© 2026 Psychological help</footer>
     </div>
   );
 }

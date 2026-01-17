@@ -18,6 +18,7 @@ export default function Navigation() {
             <NavLink
               to="/"
               aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+              className={({ isActive }) => (isActive ? css.activeLink : "")}
             >
               Home
             </NavLink>
@@ -26,6 +27,7 @@ export default function Navigation() {
             <NavLink
               to="/psychologists"
               aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+              className={({ isActive }) => (isActive ? css.activeLink : "")}
             >
               Psychologists
             </NavLink>
@@ -34,6 +36,7 @@ export default function Navigation() {
             <NavLink
               to="/favorites"
               aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+              className={({ isActive }) => (isActive ? css.activeLink : "")}
             >
               Favorites
             </NavLink>

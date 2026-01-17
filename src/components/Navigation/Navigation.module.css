@@ -4,46 +4,44 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 90px;
+  padding: 24px 0;
+  margin-bottom: 64px;
 }
 
 .nav ::after {
   content: "";
   position: absolute;
-  bottom: -24px;
+  bottom: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 1px;
   pointer-events: none;
   background-color: #e3e2e233;
   box-shadow: 0.5px 0.5px 0.5px rgba(223, 222, 222, 0.1);
-  margin-left: calc(-128px);
 }
 
 .logo {
   margin-right: 130px;
-}
-
-.logoLeft {
-  color: #3470ff;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
-.logoRight {
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+.logoLeft {
+  color: #3470ff;
 }
 
 .pages {
   display: flex;
   list-style: none;
   gap: 40px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.25;
   letter-spacing: -0.01em;
+}
+
+.activeLink {
+  color: #3470ff;
+  font-weight: 900;
 }

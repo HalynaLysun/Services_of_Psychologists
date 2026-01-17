@@ -19,17 +19,17 @@ export default function LoginModal({ onClose }) {
   };
 
   return (
-    <div className={css.modalOverlay}>
-      <div className={css.modalContent}>
+    <div className="modalOverlay">
+      <div className="modalContent">
         <button
           aria-label="Close modal"
           onClick={onClose}
-          className={css.closeButton}
+          className="closeButton"
         >
           <AiOutlineClose />
         </button>
         <h2>Log In</h2>
-        <p>Welcome back! Please enter your credentials...</p>
+        <p>Welcome back! Please enter your credentials.</p>
         <input
           type="email"
           placeholder="Email"
@@ -42,7 +42,9 @@ export default function LoginModal({ onClose }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleLogin}>Log In</button>
+        <button type="submit" onClick={handleLogin}>
+          Log In
+        </button>
       </div>
     </div>
   );

@@ -30,14 +30,14 @@ export default function RegisterModal({ onClose }) {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
       const user = userCredential.user;
 
       await sendEmailVerification(user);
 
       setSuccess(
-        "Registration successful! Please check your email to verify your account."
+        "Registration successful! Please check your email to verify your account.",
       );
       handleClose();
     } catch (error) {
@@ -56,13 +56,17 @@ export default function RegisterModal({ onClose }) {
   };
 
   return (
-    <div>
-      <div>
-        <button aria-label="Close modal" onClick={onClose}>
+    <div className="modalOverlay">
+      <div className="modalContent">
+        <button
+          className="closeButton"
+          aria-label="Close modal"
+          onClick={onClose}
+        >
           <AiOutlineClose />
         </button>
         <h2>Registration</h2>
-        <p>Please fill the form to register...</p>
+        <p>Please fill the form to register.</p>
         <input
           type="email"
           placeholder="Email"
@@ -86,7 +90,7 @@ export default function RegisterModal({ onClose }) {
         />
         {error && <p style={{ color: "red" }}>{error}</p>}
         {success && <p style={{ color: "green" }}>{success}</p>}
-        <button onClick={handleRegister} disabled={isLoading}>
+        <button type="submit" onClick={handleRegister} disabled={isLoading}>
           {isLoading ? "Регистрация..." : "Sign Up"}
         </button>
       </div>

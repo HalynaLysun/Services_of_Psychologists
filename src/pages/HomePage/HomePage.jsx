@@ -6,9 +6,10 @@ export default function HomePage() {
   return (
     <>
       <div className={css.container}>
-        <div>
+        <div className={css.wrapper}>
           <h1 className={css.title}>
-            The road to the depths of the human soul
+            The road to the <span className={css.partTitle}>depths</span> of the
+            human soul
           </h1>
           <p className={css.text}>
             We help you to reveal your potential, overcome challenges and find a
@@ -19,7 +20,11 @@ export default function HomePage() {
             Get started
           </NavLink>
         </div>
-        <img src={picturePsychologoist} alt="Psychologist" />
+        <img
+          className={css.picture}
+          src={picturePsychologoist}
+          alt="Psychologist"
+        />
       </div>
     </>
   );
