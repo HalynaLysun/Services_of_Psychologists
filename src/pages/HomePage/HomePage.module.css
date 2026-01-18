@@ -1,14 +1,20 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 80px;
+  width: 100%;
 }
 
 .wrapper {
+  max-width: 620px;
   gap: 20px;
 }
 
 .title {
-  padding-top: 36px;
+  margin-top: 36px;
   font-size: 80px;
   margin-bottom: 20px;
 }
@@ -16,30 +22,6 @@
 .partTitle {
   color: #3470ff;
   font-style: italic;
-}
-
-.auth {
-  display: flex;
-  list-style: none;
-  gap: 8px;
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-}
-
-.login {
-  padding: 14px 39px;
-  border: 1px solid #191a1533;
-  border-radius: 30px;
-}
-
-.reg {
-  padding: 14px 39px;
-  border: 1px solid #3470ff;
-  border-radius: 30px;
-  color: #fbfbfb;
-  background-color: #3470ff;
 }
 
 .text {
@@ -62,6 +44,71 @@
 }
 
 .picture {
+  width: 100%;
   max-width: 464px;
-  min-height: 526px;
+  max-height: 526px;
+}
+
+@media screen and (max-width: 760px) {
+  .container {
+    gap: 40px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .title {
+    margin-top: 26px;
+    font-size: 38px;
+    word-break: break-word;
+  }
+
+  .text {
+    font-size: 16px;
+    margin-bottom: 32px;
+    word-break: break-word;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 16px;
+    color: #fbfbfb;
+    background-color: #3470ff;
+    min-width: 140px;
+    min-height: 30px;
+  }
+
+  .button :focus {
+    outline: solid 1px blue;
+  }
+
+  .picture {
+    width: 320px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .text {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .button {
+    min-width: 120px;
+    font-size: 8px;
+    padding: 8px 0;
+    border-radius: 20px;
+  }
 }

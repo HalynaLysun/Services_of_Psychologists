@@ -11,6 +11,8 @@ body {
   padding: 0;
   color: #191a15;
   font-family: "Inter", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 input,

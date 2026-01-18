@@ -1,11 +1,12 @@
 .nav {
   position: relative;
   display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 24px 0;
-  margin-bottom: 64px;
 }
 
 .nav ::after {
@@ -21,11 +22,14 @@
 }
 
 .logo {
-  margin-right: 130px;
   font-size: 28px;
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -0.02em;
+}
+
+.logo :focus {
+  outline: solid 1px blue;
 }
 
 .logoLeft {
@@ -40,8 +44,58 @@
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
+.pages :focus {
+  outline: solid 1px blue;
+}
 
 .activeLink {
   color: #3470ff;
   font-weight: 900;
+}
+
+@media screen and (max-width: 760px) {
+  .nav {
+    gap: 10px;
+    padding: 15px 0;
+    justify-content: center;
+  }
+
+  .nav ::after {
+    height: 0.5px;
+  }
+
+  .logo {
+    margin-right: 0;
+    font-size: 16px;
+  }
+
+  .pages {
+    gap: 25px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  .logo {
+    font-size: 10px;
+  }
+
+  .logoRight {
+    display: block;
+  }
+
+  .pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 8px;
+  }
 }
