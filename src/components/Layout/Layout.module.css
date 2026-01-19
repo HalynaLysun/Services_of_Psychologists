@@ -16,7 +16,6 @@
   justify-content: flex-start;
   align-items: center;
   padding: 40px 0;
-  margin-top: 40px;
 }
 
 .loaderWrapper {
@@ -41,7 +40,7 @@
   }
 
   .main {
-    margin-top: 20px;
+    padding: 20px 0;
   }
 
   .footer {
@@ -57,7 +56,7 @@
   }
 
   .main {
-    margin-top: 10px;
+    padding: 10px 0;
   }
 
   .footer {

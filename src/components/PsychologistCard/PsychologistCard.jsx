@@ -43,6 +43,8 @@ export default function PsychologistCard({ psychologist }) {
     setIsFavorite((prev) => !prev);
   };
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 375;
+
   return (
     <div className={css.card}>
       <div className={css.header}>
@@ -52,51 +54,68 @@ export default function PsychologistCard({ psychologist }) {
         </div>
 
         <div className={css.topInfo}>
-          <p className={css.role}>Psychologist</p>
-          <h1 className={css.name}>{name}</h1>
+          <div className={css.titleWrapper}>
+            <div className={css.nameGroup}>
+              <p className={css.role}>Psychologist</p>
+              <h1 className={css.name}>{name}</h1>
+            </div>
+            <div className={css.ratingBlock}>
+              <p className={css.rating}>
+                <FaStar color="gold" />
+                Rating: <strong>{rating}</strong>
+                {!isMobile && <span className={css.line}>|</span>}
+              </p>
+              <p>
+                Price / 1 hour:
+                <strong className={css.price}>{price_per_hour}$</strong>
+              </p>
+              <button className={css.heart} onClick={handleClick}>
+                {isFavorite ? (
+                  <AiFillHeart color="#3470FF" />
+                ) : (
+                  <AiOutlineHeart />
+                )}
+              </button>
+            </div>
+          </div>
 
           <div className={css.tags}>
             <ul className={css.info}>
               <li className={css.item}>
                 <p className={css.tag}>
-                  License: <strong>{license}</strong>
+                  Experience: <span className={css.tagInfo}>{experience}</span>
                 </p>
               </li>
               <li className={css.item}>
                 <p className={css.tag}>
-                  Experience: <strong>{experience}</strong>
+                  License: <span className={css.tagInfo}>{license}</span>
+                </p>
+              </li>
+
+              <li className={css.item}>
+                <p className={css.tag}>
+                  Specialization:{" "}
+                  <span className={css.tagInfo}>{specialization}</span>
                 </p>
               </li>
               <li className={css.item}>
                 <p className={css.tag}>
-                  Specialization: <strong>{specialization}</strong>
-                </p>
-              </li>
-              <li className={css.item}>
-                <p className={css.tag}>
-                  Initial_consultation: <strong>{initial_consultation}</strong>
+                  Initial_consultation:{" "}
+                  <span className={css.tagInfo}>{initial_consultation}</span>
                 </p>
               </li>
             </ul>
           </div>
         </div>
-
-        <div className={css.ratingBlock}>
-          <FaStar color="gold" /> Rating: <strong>{rating}</strong> | Price / 1
-          hour: <span className={css.price}>{price_per_hour}$</span>
-          <button className={css.heart} onClick={handleClick}>
-            {isFavorite ? <AiFillHeart color="#3470FF" /> : <AiOutlineHeart />}
-          </button>
-        </div>
       </div>
 
       <p className={css.about}>{about}</p>
-      <button
+      <a
         className={css.readMore}
         onClick={() => setShowReviews((prev) => !prev)}
       >
         {showReviews ? "Hide" : "Read more"}
-      </button>
+      </a>
 
       {showReviews && <PsychologistReviews psychologist={psychologist} />}
     </div>

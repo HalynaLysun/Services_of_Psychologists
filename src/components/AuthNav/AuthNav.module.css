@@ -8,10 +8,6 @@
   font-weight: 500;
 }
 
-.auth :focus {
-  outline: solid 1px blue;
-}
-
 .login {
   padding: 14px 39px;
   border: 1px solid #191a1533;

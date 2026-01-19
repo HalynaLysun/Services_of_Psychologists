@@ -1,9 +1,9 @@
+import css from "./Filters.module.css";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 export default function Filters({ psychologists, onFilterChange }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  // const [sortOption, setSortOption] = useState("A-Z");
 
   const sortOption = searchParams.get("sort") ?? "A-Z";
 
@@ -36,8 +36,9 @@ export default function Filters({ psychologists, onFilterChange }) {
 
   return (
     <div>
-      <h1>Filters</h1>
+      <h1 className={css.title}>Filters</h1>
       <select
+        className={css.filterContainer}
         value={sortOption}
         onChange={(e) => {
           const nextParams = new URLSearchParams(searchParams);

@@ -1,0 +1,49 @@
+.title {
+  color: #8a8a89;
+  font-size: 16px;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  width: 226px;
+  color: #fff;
+  background-color: #3470ff;
+  outline: none;
+  border: solid 1px #3470ff;
+  /* border-radius: 15px; */
+  padding: 14px 20px;
+  appearance: none;
+  margin-bottom: 10px;
+}
+
+.filterContainer option {
+  background-color: #fff;
+  color: #8a8a89;
+  border: solid 1px #fff;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 760px) {
+  .title {
+    font-size: 12px;
+  }
+
+  .filterContainer {
+    width: 100%;
+    gap: 6px;
+    margin-top: 8px;
+    max-width: 160px;
+    padding: 10px 14px;
+    appearance: none;
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .title {
+    font-size: 10px;
+  }
+}

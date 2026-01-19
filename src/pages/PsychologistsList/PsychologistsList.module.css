@@ -1,12 +1,32 @@
 .loader {
   margin: 0 auto;
+  margin-top: 40px;
   display: block;
   padding: 4px 8px;
   border: none;
-  border-radius: 9999px;
+  border-radius: 30px;
   cursor: pointer;
   color: #fbfbfb;
   background-color: #3470ff;
   min-width: 176px;
   min-height: 48px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 760px) {
+  .loader {
+    margin-top: 28px;
+    min-width: 140px;
+    min-height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .loader {
+    margin-top: 16px;
+    min-width: 120px;
+    min-height: 32px;
+    font-size: 12px;
+  }
 }
