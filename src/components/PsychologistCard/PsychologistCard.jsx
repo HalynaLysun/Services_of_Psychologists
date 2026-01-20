@@ -49,7 +49,7 @@ export default function PsychologistCard({ psychologist }) {
     <div className={css.card}>
       <div className={css.header}>
         <div className={css.avatarWrap}>
-          <img className={css.avatar} src={avatar_url} alt={name} />
+          <img className={css.avatar} src={avatar_url} alt="doctor's picture" />
           <span className={css.onlineDot}></span>
         </div>
 

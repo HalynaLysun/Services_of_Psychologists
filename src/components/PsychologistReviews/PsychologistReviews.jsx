@@ -8,23 +8,23 @@ export default function PsychologistReviews({ psychologist }) {
   return (
     <div>
       <ul>
-        {reviews.map((review, ind) => (
-          <li key={ind}>
+        {reviews.map(({ reviewer, rating, comment }, ind) => (
+          <li key={ind} className={css.item}>
             <div className={css.reviewer}>
-              <p className={css.avatar}>M</p>
+              <p className={css.avatar}>{reviewer.charAt(0).toUpperCase()}</p>
               <div>
-                <h1>{review.reviewer}</h1>
+                <h2 className={css.name}>{reviewer}</h2>
                 <p>
-                  <FaStar color="gold" /> {review.rating}
+                  <FaStar color="gold" /> {rating}
                 </p>
               </div>
             </div>
-            <p>{review.comment}</p>
+            <p className={css.commentText}>{comment}</p>
           </li>
         ))}
       </ul>
 
-      <NavLink to="/appointment" state={{ psychologist }}>
+      <NavLink className={css.link} to="/appointment" state={{ psychologist }}>
         Make an appointment
       </NavLink>
     </div>

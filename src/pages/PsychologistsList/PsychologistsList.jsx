@@ -29,7 +29,7 @@ export default function PsychologistsList() {
         psychologists={psychologists}
         onFilterChange={setDisplayedPsychologists}
       />
-      <ul>
+      <ul className={css.list}>
         {displayedPsychologists.slice(0, visibleCount).map((psychologist) => (
           <li key={psychologist.id}>
             <PsychologistCard psychologist={psychologist} />

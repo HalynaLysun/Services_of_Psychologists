@@ -4,6 +4,7 @@
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   font-family: sans-serif;
+  margin-bottom: 18px;
 }
 
 .header {
@@ -152,16 +153,13 @@
   .card {
     padding: 20px;
     border-radius: 14px;
-  }
-
-  .header {
-    gap: 16px;
+    margin-bottom: 14px;
   }
 
   .avatar {
     max-width: 96px;
     max-height: 96px;
-    padding: 10px;
+    padding: 10px 10px;
   }
 
   .onlineDot {
@@ -177,7 +175,7 @@
     position: static;
     margin-bottom: 12px;
     justify-content: flex-start;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .name {
@@ -201,12 +199,13 @@
     display: block;
     padding: 16px;
     border-radius: 12px;
+    margin-bottom: 10px;
   }
 
   .header {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     width: 100%;
   }
 
@@ -227,24 +226,21 @@
 
   .titleWrapper {
     flex-direction: column;
+    align-items: center;
     gap: 8px;
     margin-bottom: 12px;
   }
 
   .nameGroup {
-    text-align: left;
+    align-items: center;
+    gap: 4px;
   }
 
   .ratingBlock {
-    display: flex;
     flex-direction: column;
     font-size: 12px;
     gap: 6px;
     width: 100%;
-  }
-
-  .line {
-    visibility: hidden;
   }
 
   .info {
