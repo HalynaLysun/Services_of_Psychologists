@@ -29,13 +29,14 @@
 .fieldGroup {
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .input {
   padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .textarea {
@@ -96,11 +97,15 @@
 
 .row {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.timeWrapper {
-  position: relative;
+.dateField {
+  flex: 0 0 100%;
+  width: 100%;
+  font-family: inherit;
 }
 
 .icon {
@@ -128,8 +133,8 @@
 }
 
 .disabledOption {
-  color: #ccc; /* Сірий колір */
-  text-decoration: line-through; /* Закреслення (за бажанням) */
+  color: #ccc;
+  text-decoration: line-through;
   cursor: not-allowed;
   background-color: #f9f9f9;
 }

@@ -78,7 +78,6 @@ export default function PsychologistCard({ psychologist }) {
               </button>
             </div>
           </div>
-
           <div className={css.tags}>
             <ul className={css.info}>
               <li className={css.item}>

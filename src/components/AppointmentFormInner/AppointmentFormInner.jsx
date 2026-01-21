@@ -55,18 +55,18 @@ export default function AppointmentFormInner({
         <ErrorMessage name="name" component="div" className={css.error} />
       </div>
 
+      <div className={css.fieldGroup}>
+        <Field
+          name="phone"
+          type="text"
+          placeholder="+380"
+          className={css.input}
+        />
+        <ErrorMessage name="phone" component="div" className={css.error} />
+      </div>
+
       <div className={css.row}>
         <div className={css.fieldGroup}>
-          <Field
-            name="phone"
-            type="text"
-            placeholder="+380"
-            className={css.input}
-          />
-          <ErrorMessage name="phone" component="div" className={css.error} />
-        </div>
-
-        <div className={`${css.fieldGroup} ${css.timeWrapper}`}>
           <Field name="time">
             {({ field }) => (
               <div className={css.customTimeWrapper}>
@@ -103,12 +103,15 @@ export default function AppointmentFormInner({
           </Field>
           <ErrorMessage name="time" component="div" className={css.error} />
         </div>
-      </div>
-
-      <div className={css.fieldGroup}>
-        {/* Тепер це звичайний Field без складного onChange */}
-        <Field name="date" type="date" min={today} className={css.input} />
-        <ErrorMessage name="date" component="div" className={css.error} />
+        <div className={css.fieldGroup}>
+          <Field
+            name="date"
+            type="date"
+            min={today}
+            className={`${css.input} ${css.dateField}`}
+          />
+          <ErrorMessage name="date" component="div" className={css.error} />
+        </div>
       </div>
 
       <div className={css.fieldGroup}>

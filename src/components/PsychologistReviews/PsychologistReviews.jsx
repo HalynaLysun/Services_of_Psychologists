@@ -12,6 +12,7 @@ export default function PsychologistReviews({ psychologist }) {
           <li key={ind} className={css.item}>
             <div className={css.reviewer}>
               <p className={css.avatar}>{reviewer.charAt(0).toUpperCase()}</p>
+
               <div>
                 <h2 className={css.name}>{reviewer}</h2>
                 <p>
