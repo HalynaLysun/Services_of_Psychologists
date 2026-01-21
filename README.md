@@ -1,18 +1,41 @@
-ПОКРАЩЕННЯ
-Зробити гарний css та адаптивну верстку
+🧠 Psychologist Services Platform
+A modern web application designed to connect users with professional psychologists. This project is built with a focus on performance, scalability, and seamless user experience.
 
-Додати до форми запису, логіна та реєстрації чекбокс про згоду про використання персональних даних
-Зробити логін і реєстрацію
-Зробити пагінацію на сторінці фаворитів
-Зробити, щоб фаворитів міг додавати тільки зареєстрований і залогінений користувач
-Реалізувати пагінацію на сторінці фаворитів
+Status: 🚧 Project is currently under active development.
 
-## 🚀 Future Improvements
+✨ Features Implemented
+Psychologists Directory: A list of professionals with detailed profiles and reviews.
 
-- **Enhanced Calendar Experience**: I plan to replace the standard HTML date input with a custom library like `react-datepicker`. This will allow "disabling" (graying out) fully booked dates directly in the calendar, preventing users from selecting days with no available slots.
-- **Advanced UI/UX**: Further polishing of the booking flow, including smoother transitions and real-time availability indicators.
+Dynamic Booking System: A responsive appointment modal with time-slot management and mobile-optimized layouts.
 
-_Note: These improvements are planned for future releases, especially if the project is transitioned into professional or commercial use._
+Error Handling: Integrated a global Error Boundary to ensure application stability and a professional user experience even during unexpected failures
 
-Project Status
-Note for Reviewers: The "Favorites" page is currently accessible without authorization for demonstration purposes. This allows you to test the favorite-adding functionality immediately. In the production version, this route will be restricted to registered users only.
+Responsive Design: Fully adaptive interface, optimized for mobile, tablet (760px), and desktop views.
+
+🛠 Tech Stack
+Core: React
+Routing: React Router DOM
+Styling: CSS Modules
+Icons: React Icons
+
+🚀 Planned Improvements & Roadmap
+To transition this project into a professional commercial product, the following updates are planned:
+
+🔒 Security & Data Privacy
+Compliance: Add a "Personal Data Processing Consent" checkbox to all forms (Appointment, Login, Registration).
+
+Authentication: Implement full user registration and login flows.
+
+Access Control: Restrict "Favorites" functionality to authorized users only.
+
+📈 Functionality & UI/UX
+Redux Integration: I plan to migrate the application state to Redux Toolkit to handle complex logic, such as user authentication and persistent "Favorites" storage
+
+Pagination: Implement pagination for the Favorites page to handle large datasets efficiently.
+
+Enhanced Calendar: Integrate react-datepicker to provide a better UI and "gray out" fully booked dates.
+
+📝 Note for Reviewers
+Current Favorites Access: For demonstration purposes, the "Favorites" page is currently accessible without authorization. This allows for immediate testing of the "add-to-favorites" logic. In the production release, this will be a protected route.
+
+Professional Readiness: The architecture is designed to be easily extendable for real-world commercial use
