@@ -1,7 +1,14 @@
 🧠 Psychologist Services Platform
-A modern web application designed to connect users with professional psychologists. This project is built with a focus on performance, scalability, and seamless user experience.
+A modern web application designed to connect users with professional psychologists. This project is built with a focus on performance, scalability, and seamless user experience. I decided to keep the state management simple using React Props and local state. Since the component tree is shallow, this approach keeps the code clean and avoids unnecessary complexity. For the Favorites page, I chose to fetch data independently to ensure the user always gets the most up-to-date information directly from the database.
 
-Status: 🚧 Project is currently under active development.
+Project Status: Ongoing
+This project is currently in the secondary development phase.
+Phase 1 (Completed): MVP with core filtering and Firebase integration.
+Phase 2 (Active):
+
+- UI/UX optimization and responsive design.
+- Error handling improvements.
+- Upcoming: Secure User Authentication & Private Dashboard
 
 ✨ Features Implemented
 Psychologists Directory: A list of professionals with detailed profiles and reviews.
@@ -29,8 +36,6 @@ Authentication: Implement full user registration and login flows.
 Access Control: Restrict "Favorites" functionality to authorized users only.
 
 📈 Functionality & UI/UX
-Redux Integration: I plan to migrate the application state to Redux Toolkit to handle complex logic, such as user authentication and persistent "Favorites" storage
-
 Pagination: Implement pagination for the Favorites page to handle large datasets efficiently.
 
 Enhanced Calendar: Integrate react-datepicker to provide a better UI and "gray out" fully booked dates.

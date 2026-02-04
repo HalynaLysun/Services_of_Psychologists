@@ -1,6 +1,7 @@
 import css from "./PsychologistReviews.module.css";
 import { FaStar } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 export default function PsychologistReviews({ psychologist }) {
   const { reviews } = psychologist;
@@ -8,8 +9,8 @@ export default function PsychologistReviews({ psychologist }) {
   return (
     <div>
       <ul>
-        {reviews.map(({ reviewer, rating, comment }, ind) => (
-          <li key={ind} className={css.item}>
+        {reviews.map(({ reviewer, rating, comment }) => (
+          <li key={uuidv4()} className={css.item}>
             <div className={css.reviewer}>
               <p className={css.avatar}>{reviewer.charAt(0).toUpperCase()}</p>
 
