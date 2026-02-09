@@ -20,7 +20,7 @@ export default function RegisterModal({ onClose }) {
     setSuccess(null);
 
     if (password !== confirmPassword) {
-      setError("Пароли не совпадают");
+      setError("The passwords don't match");
       return;
     }
 
@@ -37,11 +37,11 @@ export default function RegisterModal({ onClose }) {
       await sendEmailVerification(user);
 
       setSuccess(
-        "Registration successful! Please check your email to verify your account.",
+        "Registration successful! Please check your email to verify your account. If you don't see the letter, check your Spam folder.",
       );
       handleClose();
     } catch (error) {
-      setError("Ошибка регистрации: " + error.message);
+      setError("Registration error: " + error.message);
     } finally {
       setIsLoading(false);
     }
@@ -91,7 +91,7 @@ export default function RegisterModal({ onClose }) {
         {error && <p style={{ color: "red" }}>{error}</p>}
         {success && <p style={{ color: "green" }}>{success}</p>}
         <button type="submit" onClick={handleRegister} disabled={isLoading}>
-          {isLoading ? "Регистрация..." : "Sign Up"}
+          {isLoading ? "Registration..." : "Sign Up"}
         </button>
       </div>
     </div>

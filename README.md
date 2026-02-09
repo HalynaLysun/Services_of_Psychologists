@@ -1,3 +1,9 @@
+<!-- Регистрация
+порпавити трохи дизайн при успішній або неуспішній реєстрації та логіні, замість алертів поставити бібліотеку, та закривати модалки автоматично
+
+Сделать фаворитов закрытыми до логинизации???
+и сделать при входе иконку пользователя вместо логін -->
+
 🧠 Psychologist Services Platform
 A modern web application designed to connect users with professional psychologists. This project is built with a focus on performance, scalability, and seamless user experience. I decided to keep the state management simple using React Props and local state. Since the component tree is shallow, this approach keeps the code clean and avoids unnecessary complexity. For the Favorites page, I chose to fetch data independently to ensure the user always gets the most up-to-date information directly from the database.
 
@@ -19,6 +25,12 @@ Error Handling: Integrated a global Error Boundary to ensure application stabili
 
 Responsive Design: Fully adaptive interface, optimized for mobile, tablet (760px), and desktop views.
 
+User Authentication: Secure sign-up and login system powered by Firebase Auth.
+
+Personalized Experience: Unique "Favorites" page for each user, with data persisted in real-time.
+
+Persistent Session: Users stay logged in even after page refreshes, thanks to custom useAuth hook and Firebase's session management.
+
 🛠 Tech Stack
 Core: React
 Routing: React Router DOM
@@ -31,16 +43,22 @@ To transition this project into a professional commercial product, the following
 🔒 Security & Data Privacy
 Compliance: Add a "Personal Data Processing Consent" checkbox to all forms (Appointment, Login, Registration).
 
-Authentication: Implement full user registration and login flows.
-
-Access Control: Restrict "Favorites" functionality to authorized users only.
-
 📈 Functionality & UI/UX
+Extended User Authentication: Update the sign-up modal to include a "Username" field and implement updateProfile (Firebase Auth) to store and display the user's name across the application.
+
+Advanced Notifications: Replace standard browser alerts with a modern notification library (e.g., React Hot Toast or Toastify) to improve user feedback for login and registration events.
+
 Pagination: Implement pagination for the Favorites page to handle large datasets efficiently.
 
 Enhanced Calendar: Integrate react-datepicker to provide a better UI and "gray out" fully booked dates.
 
+Interactive Review & Rating System\*\*:
+
+- Enable authenticated users to leave feedback and star ratings.
+- Implement pagination for the reviews section to optimize performance.
+
 📝 Note for Reviewers
-Current Favorites Access: For demonstration purposes, the "Favorites" page is currently accessible without authorization. This allows for immediate testing of the "add-to-favorites" logic. In the production release, this will be a protected route.
+
+Security Note: Access to the "Favorites" page is strictly protected and visible only to authorized users. Unauthorized users are redirected to the Home page to ensure data privacy.
 
 Professional Readiness: The architecture is designed to be easily extendable for real-world commercial use

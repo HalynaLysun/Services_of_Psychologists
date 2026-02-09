@@ -10,11 +10,23 @@ export default function LoginModal({ onClose }) {
 
   const handleLogin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("Вы успешно вошли!");
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+      const user = userCredential.user;
+
+      if (!user.emailVerified) {
+        await auth.signOut();
+        alert("Please verify your email before logging in.");
+        return;
+      }
+
+      alert("You have logged in successfully!");
       onClose();
     } catch (error) {
-      alert("Ошибка входа: " + error.message);
+      alert("Login error: " + error.message);
     }
   };
 
