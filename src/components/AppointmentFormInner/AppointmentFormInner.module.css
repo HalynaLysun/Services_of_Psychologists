@@ -138,3 +138,13 @@
   cursor: not-allowed;
   background-color: #f9f9f9;
 }
+
+.checkBoxGroup {
+  flex-direction: row;
+  gap: 20px;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}

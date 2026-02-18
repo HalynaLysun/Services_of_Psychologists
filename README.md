@@ -1,7 +1,8 @@
 <!-- Регистрация
 порпавити трохи дизайн при успішній або неуспішній реєстрації та логіні, замість алертів поставити бібліотеку, та закривати модалки автоматично
 
-Сделать фаворитов закрытыми до логинизации???
+Додати чекбокс про використання персональних даних до логіну і реєстрації
+покращити css сторінки про використання персональних даних, включаючи адаптивний дизайн
 и сделать при входе иконку пользователя вместо логін -->
 
 🧠 Psychologist Services Platform
@@ -52,7 +53,12 @@ Pagination: Implement pagination for the Favorites page to handle large datasets
 
 Enhanced Calendar: Integrate react-datepicker to provide a better UI and "gray out" fully booked dates.
 
-Interactive Review & Rating System\*\*:
+Since this project is being developed for real-world application, the following steps are planned for implementation:
+
+**Database Migration**: Transitioning from the current test setup to a production-ready database featuring a real, verified directory of psychologists.
+**Individual Notification System**: Implementing a personalized notification flow for each specialist. Each psychologist will receive an individual alert (via email or dashboard) immediately upon a new appointment booking.
+**Production Deployment**: Finalizing security protocols and GDPR-compliant data handling to ensure a safe environment for both specialists and patients.
+**Interactive Review & Rating System**:
 
 - Enable authenticated users to leave feedback and star ratings.
 - Implement pagination for the reviews section to optimize performance.

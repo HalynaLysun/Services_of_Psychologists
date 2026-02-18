@@ -25,6 +25,7 @@ export default function AppointmentForm() {
     time: "",
     email: "",
     comment: "",
+    checkbox: false,
   };
 
   useEffect(() => {
@@ -49,6 +50,9 @@ export default function AppointmentForm() {
     time: Yup.string().required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),
     comment: Yup.string(),
+    checkbox: Yup.boolean()
+      .oneOf([true], "You must agree to the Privacy Policy")
+      .required("Required"),
   });
 
   return (

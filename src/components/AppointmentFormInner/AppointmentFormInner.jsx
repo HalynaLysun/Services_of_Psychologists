@@ -134,6 +134,22 @@ export default function AppointmentFormInner({
         <ErrorMessage name="comment" component="div" className={css.error} />
       </div>
 
+      <div className={`${css.fieldGroup} ${css.checkBoxGroup}`}>
+        <Field name="checkbox" type="checkbox" className={css.checkbox} />
+        <p>
+          {"I agree to the processing of my personal data according to the "}
+          <a
+            href="/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            сlassName={css.privacyLink}
+          >
+            Privacy Policy
+          </a>
+        </p>
+        <ErrorMessage name="checkbox" component="div" className={css.error} />
+      </div>
+
       <button type="submit" className={css.button}>
         Send
       </button>
